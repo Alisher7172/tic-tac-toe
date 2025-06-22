@@ -3,12 +3,7 @@ const status = document.getElementById('status');
 const resetBtn = document.getElementById('resetBtn');
 let playerX = document.getElementsByClassName('playerX');
 let playerO = document.getElementsByClassName('playerO');
-<<<<<<< HEAD
 
-=======
-let playerXs = playerX;
-let playerOs = playerO;
->>>>>>> 32c841408c5ba217f5c1815629769e5323e983c9
 
 let cells = Array(9).fill(null);
 let currentPlayer = 'X';
@@ -68,11 +63,6 @@ resetBtn.addEventListener('click', () => {
   createBoard();
 });
 
-<<<<<<< HEAD
-createBoard();
-=======
+
 createBoard();
 
-// cookies
-console.log(navigator.cookieEnabled);
->>>>>>> 32c841408c5ba217f5c1815629769e5323e983c9
