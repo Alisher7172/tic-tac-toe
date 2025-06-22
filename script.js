@@ -1,6 +1,9 @@
 const board = document.getElementById('board');
 const status = document.getElementById('status');
 const resetBtn = document.getElementById('resetBtn');
+let playerX = document.getElementsByClassName('playerX');
+let playerO = document.getElementsByClassName('playerO');
+
 
 let cells = Array(9).fill(null);
 let currentPlayer = 'X';
@@ -29,6 +32,7 @@ function handleClick(e) {
   if (checkWinner()) {
     status.textContent = `Player ${currentPlayer} wins! 🎉`;
     isGameOver = true;
+
   } else if (cells.every(cell => cell)) {
     status.textContent = "It's a draw!";
     isGameOver = true;
