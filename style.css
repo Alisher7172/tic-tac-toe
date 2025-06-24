@@ -1,14 +1,22 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
 body {
-  font-family: Arial sans-serif;
-  background: #f0f4f8;
+  font-family: Arial, sans-serif;
+  background: rgb(220, 230, 92);
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  height: 100vh;
+  min-height: 100vh;
+  padding-bottom: 100px; /* to prevent footer overlap */
 }
 
 .container {
   text-align: center;
+  margin-top: 60px;
 }
 
 .board {
@@ -23,18 +31,17 @@ body {
   height: 100px;
   background: #221b1b;
   color: red;
-  border: 2x solid #333;
+  border: 2px solid #333; /* Fixed typo: was '2x' */
   border-radius: 5px;
   font-size: 2.5rem;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-
 }
 
 .cell:hover {
-  background: #e1ecf4;
+  background: rgb(165, 171, 175);
 }
 
 .status {
@@ -48,10 +55,12 @@ button {
   background-color: rgba(13, 13, 116, 0.884);
   padding: 11px 22px;
   color: white;
-  font-size: 1.2rem ;
+  font-size: 1.2rem;
   font-weight: bold;
   cursor: pointer;
+  margin-top: 10px;
 }
+
 .score_container {
   display: flex;
   flex-direction: column;
@@ -60,16 +69,53 @@ button {
   left: 10px;
   font-size: 1.5rem;
   color: rgba(49, 4, 250, 1);
-
 }
+
 .score {
   color: rgb(10, 6, 6);
 }
-.playerX  {
+
+.playerX,
+.playerO {
   color: black;
   display: inline-block;
 }
-.playerO {
-  display: inline-block;
-  color: black;
+
+.winner {
+  font-size: 1.5rem;
+  margin: 10px;
+  color: green;
+  font-weight: bold;
+}
+
+.footerContainer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  background: #333;
+  width: 100%;
+  height: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.footerContainer a {
+  color: white;
+  font-size: 2rem;
+  text-decoration: none;
+  transition: color 0.3s, font-size 0.3s;
+}
+
+.footerContainer a:hover {
+  color: rgb(140, 155, 168);
+  font-size: 2.2rem;
+}
+
+.social_media {
+  font-size: 1.3rem;
+  color: white;
+  margin-right: 10px;
 }
