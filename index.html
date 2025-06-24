@@ -4,23 +4,40 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Tic Tac Toe</title>
-  <link rel="stylesheet" href="style.css"/>
+  <link rel="icon" href="/images/fav.webp" type="image/webp" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
+
+  <!-- Score Board -->
   <div class="score_container">
-    <div class="score">score: </div>
-    <div>X: <div class="playerX">0</div></div>
-    <div>O: <div class="playerO">0</div></div>
+    <div class="score">Score:</div>
+    <div>X: <span class="playerX">0</span></div>
+    <div>O: <span class="playerO">0</span></div>
   </div>
-  <div class = "winner"></div>
 
-
+  <!-- Game Container -->
   <div class="container">
     <h1>Tic Tac Toe</h1>
     <div id="board" class="board"></div>
     <div class="status" id="status">Player X's turn</div>
+    <div class="winner"></div>
     <button id="resetBtn">Restart Game</button>
   </div>
+
+  <!-- Social Footer -->
+  <div class="footerContainer">
+    <p class="social_media">Social Media</p>
+    <a href="#" aria-label="Telegram"><i class="fa-brands fa-telegram"></i></a>
+    <a href="#" aria-label="X (Twitter)"><i class="fa-brands fa-x-twitter"></i></a>
+    <a href="#" aria-label="Instagram"><i class="fa-brands fa-square-instagram"></i></a>
+    <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
+    <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+    <a href="#" aria-label="Snapchat"><i class="fa-brands fa-snapchat"></i></a>
+  </div>
+
+  <!-- JavaScript -->
   <script src="script.js"></script>
 </body>
 </html>
