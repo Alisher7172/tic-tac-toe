@@ -6,12 +6,13 @@
 
 body {
   font-family: Arial, sans-serif;
-  background: rgb(220, 230, 92);
+  background-color: #f8f9fa;
   display: flex;
   flex-direction: column;
   align-items: center;
   min-height: 100vh;
-  padding-bottom: 100px; /* to prevent footer overlap */
+  padding-bottom: 100px;
+  transition: background-color 0.3s, color 0.3s;
 }
 
 .container {
@@ -24,6 +25,7 @@ body {
   grid-template-columns: repeat(3, 100px);
   gap: 10px;
   margin: 20px auto;
+  justify-content: center;
 }
 
 .cell {
@@ -31,13 +33,14 @@ body {
   height: 100px;
   background: #221b1b;
   color: red;
-  border: 2px solid #333; /* Fixed typo: was '2x' */
+  border: 2px solid #333;
   border-radius: 5px;
   font-size: 2.5rem;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: background 0.3s;
 }
 
 .cell:hover {
@@ -110,7 +113,7 @@ button {
 }
 
 .footerContainer a:hover {
-  color: rgb(140, 155, 168);
+  color: rgb(212, 222, 231);
   font-size: 2.2rem;
 }
 
@@ -118,4 +121,82 @@ button {
   font-size: 1.3rem;
   color: white;
   margin-right: 10px;
+}
+
+/* Dark Mode */
+.dark-mode {
+  background-color: #121212 !important;
+  color: #f1f1f1;
+}
+
+.dark-mode .cell {
+  background: #1e1e1e;
+  color: red;
+  border-color: #555;
+}
+
+.dark-mode .status,
+.dark-mode .winner,
+.dark-mode .score,
+.dark-mode .score_container,
+.dark-mode .playerO,
+.dark-mode .playerX,
+.dark-mode .form-check-label {
+  color: #f1f1f1;
+}
+
+.dark-mode .footerContainer {
+  background: #222;
+}
+
+.dark-mode .footerContainer a {
+  color: #eee;
+}
+
+/* 📱 Responsive Design */
+@media (max-width: 768px) {
+  .board {
+    grid-template-columns: repeat(3, 80px);
+    gap: 8px;
+  }
+
+  .cell {
+    width: 80px;
+    height: 80px;
+    font-size: 2rem;
+  }
+
+  button {
+    font-size: 1rem;
+    padding: 8px 16px;
+  }
+
+  .score_container {
+    font-size: 1.2rem;
+  }
+
+  .footerContainer a {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .board {
+    grid-template-columns: repeat(3, 60px);
+    gap: 6px;
+  }
+
+  .cell {
+    width: 60px;
+    height: 60px;
+    font-size: 1.5rem;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  .score_container {
+    font-size: 1rem;
+  }
 }
