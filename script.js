@@ -4,6 +4,7 @@ const resetBtn = document.getElementById('resetBtn');
 const playerXEl = document.querySelector('.playerX');
 const playerOEl = document.querySelector('.playerO');
 const winnerDisplay = document.querySelector('.winner');
+const darkToggle = document.getElementById('darkModeToggle');
 
 let cells = Array(9).fill(null);
 let currentPlayer = 'X';
@@ -24,12 +25,12 @@ function createBoard() {
 }
 
 function handleClick(e) {
-  const index = e.target.dataset.index;
-
+  const index = parseInt(e.target.dataset.index);
   if (cells[index] || isGameOver) return;
 
   cells[index] = currentPlayer;
   e.target.textContent = currentPlayer;
+  e.target.style.color = currentPlayer === 'X' ? 'red' : 'blue';
 
   if (checkWinner()) {
     status.textContent = `Player ${currentPlayer} wins! 🎉`;
@@ -49,11 +50,10 @@ function handleClick(e) {
 
 function checkWinner() {
   const winPatterns = [
-    [0, 1, 2], [3, 4, 5], [6, 7, 8], // rows
-    [0, 3, 6], [1, 4, 7], [2, 5, 8], // columns
-    [0, 4, 8], [2, 4, 6]             // diagonals
+    [0, 1, 2], [3, 4, 5], [6, 7, 8],
+    [0, 3, 6], [1, 4, 7], [2, 5, 8],
+    [0, 4, 8], [2, 4, 6]
   ];
-
   return winPatterns.some(pattern => {
     const [a, b, c] = pattern;
     return cells[a] && cells[a] === cells[b] && cells[a] === cells[c];
@@ -79,5 +79,10 @@ resetBtn.addEventListener('click', () => {
   createBoard();
 });
 
+darkToggle.addEventListener('change', () => {
+  document.body.classList.toggle('dark-mode');
+});
+
 // Initial board render
 createBoard();
+
